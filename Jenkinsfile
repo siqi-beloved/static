@@ -4,6 +4,11 @@ pipeline {
 		withAWS(region:'us-east-2', credentials:'aws-static')
 	}
 	stages {
+		stage('Lint HTML'){
+			steps{
+				tidy -q -e *.html
+			}
+		}
 		stage('Upload to AWS'){
 			steps{
 				sh 'echo "Hello World"'
