@@ -1,8 +1,8 @@
 pipeline {
 	agent any
 	options {
-	withAWS(region:'us-east-2', credentials:'aws-static',profile:'myProfile')
-}
+		withAWS(region:'us-east-2', credentials:'aws-static')
+	}
 	stages {
 		stage('Upload to AWS'){
 			steps{
